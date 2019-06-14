@@ -1,0 +1,35 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]+\ /([^/]+/)*[^.#?\ ]+\.php([#?][^\ ]*)?\ HTTP/
+RewriteRule ^(([^/]+/)*[^.]+)\.php /$1 [R=301,L]
+
+ErrorDocument 404     /pages/404.php
+
+Options -Indexes
+Options +FollowSymLinks
+
+RewriteRule page/(.*)/ pages/index.php?id=$1
+RewriteRule user/(.*)/(.*) user/index.php?username=$1&role=$2
+RewriteRule item/(.*)/(.*)/(.*) item.php?id=$1&title=$2&role=$3
+RewriteRule category/(.*)/(.*) category.php?cat=$1&subcat=$2
+RewriteRule category/(.*) category.php?cat=$1
+RewriteRule browse/tags/(.*) browse/tags.php?term=$1
+RewriteRule download/(.*)/ download/index.php?id=$1
+RewriteRule redirect/(.*)/ redirect.php?id=$1
+RewriteRule verify/(.*)/ verify.php?id=$1
+RewriteRule free/(.*)/ free.php?id=$1
+RewriteRule forgot-password/(.*)/ forgot-password.php?id=$1
+RewriteRule admin/users/edit/(.*)/ admin/users/edit.php?id=$1
+RewriteRule admin/users/view/(.*)/ admin/users/view.php?id=$1
+RewriteRule admin/categories/edit/(.*)/ admin/categories/edit.php?id=$1
+RewriteRule admin/items/edit/(.*)/ admin/items/edit.php?id=$1
+RewriteRule admin/items/finish/(.*)/ admin/items/finish.php?id=$1
+RewriteRule admin/items/files/(.*)/ admin/items/files.php?id=$1
+RewriteRule admin/testimonials/edit/(.*)/ admin/testimonials/edit.php?id=$1
+RewriteRule admin/announcements/edit/(.*)/ admin/announcements/edit.php?id=$1
+RewriteRule admin/pages/edit/(.*)/ admin/pages/edit.php?id=$1
+
+DirectoryIndex home.php

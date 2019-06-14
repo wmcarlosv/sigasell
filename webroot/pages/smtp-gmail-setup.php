@@ -1,0 +1,7 @@
+<?php
+
+ require_once (dirname(dirname(__FILE__)).'/loader.php');
+
+ show('Pages/Help/smtp-gmail-setup');
+
+?>

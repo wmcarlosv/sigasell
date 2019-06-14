@@ -1,0 +1,5 @@
+[11-Jun-2019 08:47:45 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function limit() on null in D:\xampp\htdocs\DigaSell\config\models\functionModel.php:2070
+Stack trace:
+#0 D:\xampp\htdocs\DigaSell\webroot\home.php(32): functionModel->do_popularitems()
+#1 {main}
+  thrown in D:\xampp\htdocs\DigaSell\config\models\functionModel.php on line 2070
